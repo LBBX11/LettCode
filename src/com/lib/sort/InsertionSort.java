@@ -18,7 +18,9 @@ public class InsertionSort  {
 
 	private static void insertionSort(int[] nums) {
         for (int i = 1, j, current; i < nums.length; ++i) {
-            current = nums[i];
+            //1.以当前选择的值为【标志位】，数组【当前位置】前【大于】【当前值】的与当前值交换
+        	//可保证除【当前值】和【前一个值】做排序交换，其余前面的数据已正常排序（nums[j] > current过滤）
+        	current = nums[i];
             for (j = i - 1; j >= 0 && nums[j] > current; --j) {
                 nums[j + 1] = nums[j];
             }
