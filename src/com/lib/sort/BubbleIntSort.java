@@ -2,6 +2,9 @@ package com.lib.sort;
 
 import java.util.Arrays;
 
+import com.lib.utils.OutUtil;
+import com.lib.utils.SortUtil;
+
 /**
  * 冒泡排序
  * 
@@ -20,23 +23,7 @@ public class BubbleIntSort {
 	public static void main(String[] args) {
 		int[] nums = {1, 2, 7, 9, 5, 8};
         bubbleSort(nums);
-        System.out.println(Arrays.toString(nums));
-	}
-	/**
-	 * 整型数组元素交换方法
-	 * @param nums
-	 * @param i
-	 * @param j
-	 */
-	public static void swap(int[] nums,int i ,int j){
-		int t = nums[i];
-        nums[i] = nums[j];
-        nums[j] = t;
-		//
-//		int t = nums[i];
-//		int y = nums[j];
-//		nums[i] = y;
-//		nums[j] = t;
+        OutUtil.outArr(nums);
 	}
 
 	/**
@@ -52,13 +39,12 @@ public class BubbleIntSort {
 			hasChange = false;
 			for (int j = 0; j < nums.length-1-i; j++) {
 				if(nums[j] > nums[j+1]){
-					swap(nums,j,j+1);
+					SortUtil.swap(nums,j,j+1);
 					hasChange = true;
 				}
 			}
 			
 		}
-		 System.out.println(Arrays.toString(nums));
 		
 	}
 	
